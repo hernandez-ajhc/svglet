@@ -1,0 +1,142 @@
+:root {
+  --bg-color: #020617;
+  /* slate-950 */
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  /* slate-400 */
+
+  /* Social Colors */
+  --color-youtube: #FF0000;
+  --color-twitter: #1DA1F2;
+  --color-instagram: #E1306C;
+  --color-linkedin: #0077B5;
+  --color-tiktok: #FE2C55;
+}
+
+body {
+  margin: 0;
+  font-family: 'Outfit', system-ui, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Background Blobs */
+.background-decorations {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  width: 24rem;
+  height: 24rem;
+  border-radius: 50%;
+  filter: blur(128px);
+  opacity: 0.2;
+}
+
+.blob-purple {
+  top: -10%;
+  left: -10%;
+  background-color: #9333ea;
+  /* purple-600 */
+}
+
+.blob-blue {
+  bottom: -10%;
+  right: -10%;
+  background-color: #2563eb;
+  /* blue-600 */
+}
+
+.main-wrapper {
+  z-index: 10;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  /* ~5xl */
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 2rem;
+  /* Gradient text */
+  background: linear-gradient(to right, #ffffff, #94a3b8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding-bottom: 0.5rem;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 1rem;
+
+  /* Glassmorphism */
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  /* Fix for stacking context / flicker */
+  transform: translateZ(0);
+}
+
+.icon-link {
+  display: inline-block;
+  font-size: 2.25rem;
+  /* ~4xl */
+  color: var(--text-secondary);
+  cursor: pointer;
+
+  /* Performance & Anti-Flicker */
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+  will-change: transform, filter;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  text-decoration: none;
+  /* Remove underline from anchors */
+}
+
+.icon-link:hover {
+  transform: scale(1.25);
+}
+
+/* Specific Hover Effects on the Anchor */
+.youtube:hover {
+  color: var(--color-youtube);
+  filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.6));
+}
+
+.twitter:hover {
+  color: var(--color-twitter);
+  filter: drop-shadow(0 0 15px rgba(29, 161, 242, 0.6));
+}
+
+.instagram:hover {
+  color: var(--color-instagram);
+  filter: drop-shadow(0 0 15px rgba(225, 48, 108, 0.6));
+}
+
+.linkedin:hover {
+  color: var(--color-linkedin);
+  filter: drop-shadow(0 0 15px rgba(0, 119, 181, 0.6));
+}
+
+.tiktok:hover {
+  color: var(--color-tiktok);
+  filter: drop-shadow(0 0 15px rgba(254, 44, 85, 0.6));
+}

@@ -1,0 +1,40 @@
+{
+    "name": "svglet",
+    "version": "0.1.0",
+    "description": "A lightweight JavaScript library for loading local SVG icons inline with full CSS and Tailwind support.",
+    "type": "module",
+    "main": "dist/svglet.js",
+    "module": "dist/svglet.js",
+    "files": [
+        "dist",
+        "src",
+        "docs",
+        "README.md",
+        "LICENSE"
+    ],
+    "keywords": [
+        "svg",
+        "icons",
+        "icon-library",
+        "inline-svg",
+        "tailwind",
+        "css",
+        "javascript"
+    ],
+    "author": {
+        "name": "Anthony Hernandez, VeratekSoft UG",
+        "country": "DE"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hernandez-ajhc/svglet"
+    },
+    "bugs": {
+        "url": "https://github.com/hernandez-ajhc/svglet/issues"
+    },
+    "homepage": "https://github.com/hernandez-ajhc/svglet#readme",
+    "scripts": {
+        "build": "echo \"Build step will be added in a future release\""
+    }
+}

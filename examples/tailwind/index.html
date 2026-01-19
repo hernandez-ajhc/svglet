@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>svglet – Tailwind Premium</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+  </style>
+</head>
+
+<body
+  class="bg-slate-950 text-white flex flex-col items-center justify-center min-h-screen overflow-hidden selection:bg-pink-500 selection:text-white">
+
+  <!-- Background decorations -->
+  <div class="fixed inset-0 z-0 pointer-events-none">
+    <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-purple-600/20 rounded-full blur-[128px]"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-600/20 rounded-full blur-[128px]"></div>
+  </div>
+
+  <div class="z-10 text-center space-y-8">
+    <h1
+      class="text-5xl font-bold tracking-tight bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent pb-2">
+      Follow Me
+    </h1>
+
+    <div
+      class="flex items-center gap-8 p-8 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl [transform:translateZ(0)]">
+      <!-- Icons wrapped in anchors for robust hover persistence and linking -->
+
+      <!-- YouTube -->
+      <a href="https://youtube.com/@hernandez_ajhc?si=hd7iM_5WjmLD1Zwl" target="_blank"
+        class="group text-4xl text-slate-400 transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:scale-125 hover:text-[#FF0000] hover:drop-shadow-[0_0_15px_rgba(255,0,0,0.6)] [will-change:transform,filter] [backface-visibility:hidden]">
+        <i data-icon="youtube"></i>
+      </a>
+
+      <!-- Twitter/X -->
+      <a href="https://twitter.com/hernandez_ajhc" target="_blank"
+        class="group text-4xl text-slate-400 transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:scale-125 hover:text-[#1DA1F2] hover:drop-shadow-[0_0_15px_rgba(29,161,242,0.6)] [will-change:transform,filter] [backface-visibility:hidden]">
+        <i data-icon="twitter"></i>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://instagram.com/hernandez_ajhc" target="_blank"
+        class="group text-4xl text-slate-400 transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:scale-125 hover:text-[#E1306C] hover:drop-shadow-[0_0_15px_rgba(225,48,108,0.6)] [will-change:transform,filter] [backface-visibility:hidden]">
+        <i data-icon="instagram"></i>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/anthony-hernandez-654889378" target="_blank"
+        class="group text-4xl text-slate-400 transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:scale-125 hover:text-[#0077B5] hover:drop-shadow-[0_0_15px_rgba(0,119,181,0.6)] [will-change:transform,filter] [backface-visibility:hidden]">
+        <i data-icon="linkedin"></i>
+      </a>
+
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@hernandez_ajhc" target="_blank"
+        class="group text-4xl text-slate-400 transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:scale-125 hover:text-[#FE2C55] hover:drop-shadow-[0_0_15px_rgba(254,44,85,0.6)] [will-change:transform,filter] [backface-visibility:hidden]">
+        <i data-icon="tiktok"></i>
+      </a>
+
+
+    </div>
+  </div>
+
+  <script type="module" src="../../../src/index.js"></script>
+</body>
+
+</html>
