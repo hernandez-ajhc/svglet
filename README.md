@@ -7,15 +7,14 @@
 > A lightweight, zero-dependency SVG icon loader focused on clean HTML and better organization.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Version](https://img.shields.io/badge/version-0.2.0-green.svg)
+![Version](https://img.shields.io/badge/version-0.3.0-green.svg)
 
-**svglet** is a small vanilla JavaScript library that replaces  
-`<i data-icon="name"></i>` elements with inline SVGs loaded from your own project.
+**svglet** is a small vanilla JavaScript library that renders local SVG icons using
+`<i data-icon="name"></i>` elements with CSS tagging.
 
 Its goal is simple:  
 **keep your HTML clean, your icons organized, and your workflow flexible**.
 
----
 
 ## Why svglet?
 
@@ -28,7 +27,6 @@ Inline SVGs are powerful, but copying and pasting large SVG blocks into HTML qui
 
 **No frameworks. No dependencies. No build step.**
 
----
 
 ## Features
 
@@ -36,13 +34,13 @@ Inline SVGs are powerful, but copying and pasting large SVG blocks into HTML qui
   Pure vanilla JavaScript. Works directly in the browser.
 
 - 🧼 **Clean HTML**  
-  Replace large inline SVG blocks with a simple:
+  Keep your DOM clean with simple tags:
   ```html
   <i data-icon="menu"></i>
   ```
 
 - 🎨 **Fully Stylable**  
-  Inline SVG means `currentColor`, CSS animations, and Tailwind utilities all work naturally.
+  Uses CSS `mask-image` rendering, so `currentColor`, CSS animations, and Tailwind utilities work naturally.
 
 - ✨ **Gradient Support**  
   Built-in support for SVG gradients without extra tooling.
@@ -95,13 +93,56 @@ svglet intentionally avoids unnecessary complexity.
 
 ## Styling & Animations
 
-Because svglet injects inline SVGs, you can style them like any other element:
+Because svglet uses standard elements with CSS masks, you can style them like any other element:
 
 ```html
 <i data-icon="youtube" class="text-4xl text-red-500 hover:scale-110"></i>
 ```
 
 Animations, colors, sizes, gradients — all handled by CSS or Tailwind.
+
+### Built-in Animations
+
+svglet v0.3.0+ comes with built-in utility classes for common animations:
+
+| Class | Description |
+| :--- | :--- |
+| `svg-spin` | Rotates the icon 360° |
+| `svg-spin-reverse` | Rotates the icon -360° |
+| `svg-spin-pulse` | 8-step rotation |
+| `svg-beat` | Scales up and down |
+| `svg-beat-fade` | Scales and fades |
+| `svg-bounce` | Jumps up and down |
+| `svg-fade` | Fades in and out |
+| `svg-flip` | Flips on Y-axis |
+| `svg-shake` | Shakes back and forth |
+
+### Modifiers
+
+You can customize the animation behavior with modifier classes:
+
+#### Hover Only
+Prefix any animation with `svg-hover-` to run it only when hovering over the element:
+* `svg-hover-spin`
+* `svg-hover-bounce`
+* `svg-hover-beat`
+* ...and so on.
+
+#### Speed Control
+Adjust the animation speed:
+* `svg-fast` (0.5s)
+* `svg-slow` (2s)
+* `svg-super-slow` (3s)
+
+Example:
+
+```html
+<!-- Spins continuously -->
+<i data-icon="star" class="svg-spin text-yellow-500"></i>
+
+<!-- Spins only on hover, fast -->
+<i data-icon="star" class="svg-hover-spin svg-fast text-yellow-500"></i>
+```
 
 ## Documentation
 

@@ -30,9 +30,11 @@ You can override the default gradient colors using `data-gradient-from` and `dat
 
 ## How It Works
 
-When `svg-gradient` is present, svglet:
-1. Generates a unique `<linearGradient>` definition.
-2. Injects it into a `<defs>` block within the SVG.
-3. Updates the `fill` or `stroke` of the icon's paths to reference this new gradient ID.
+## How It Works
 
-This ensures that even if you have multiple of the same icon on a page, they can each have their own unique gradients.
+When `svg-gradient` is present, svglet:
+1. Sets the `background-image` of the element to a `linear-gradient`.
+2. Sets `background-color` to `transparent`.
+3. ensuring the gradient is visible only through the icon's mask.
+
+This keeps the DOM clean and leverages native CSS gradients for better performance and flexibility.

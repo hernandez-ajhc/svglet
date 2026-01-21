@@ -4,20 +4,21 @@ We are actively working on improving **svglet**. Below is our planned roadmap fo
 
 ## v0.1.0
 - ✅ Initial release
-- ✅ Inline SVG replacement
+- ✅ SVG rendering
 - ✅ `currentColor` support
 - ✅ Basic gradient support
 
-## v0.2.0: Flexibility Update (Current)
+## v0.2.0: Flexibility Update
 - ✅ **Configurable Icon Path**: API to set a custom path for icons (removing the hardcoded dependency).
 - ✅ **Caching**: Browser-side caching of fetched SVGs to reduce network requests.
 - ✅ **Auto-init Toggle**: Option to manually trigger scanning instead of auto-running on load.
 
-## v0.3.0: Animation Update
-- ⬜ **CSS-based Icon Animations**: Built-in classes for spinning, bouncing, and fading icons.
+## v0.3.0: Animation & Rendering Update (Current)
+- ✅ **CSS Mask Rendering**: Switched to `mask-image` for cleaner DOM and better performance.
+- ✅ **CSS-based Icon Animations**: Built-in classes for spinning, bouncing, and fading icons.
 
 ## v0.4.0: Developer Experience
-- ⬜ **Improved Error Handling**: Clear and descriptive **console.warn** messages when an icon is missing or fails to load.
+- ⬜ **Improved Error Handling**: Clear and descriptive `console.warn` messages when an icon is missing or fails to load.
 - ⬜ **Debug Mode**: Optional debug mode to log internal actions and loading states.
 - ⬜ **Better Documentation**: More examples and usage patterns focused on real-world scenarios.
 
@@ -31,8 +32,8 @@ We are actively working on improving **svglet**. Below is our planned roadmap fo
 - ⬜ **Minimal Build Output**: Small, framework-agnostic bundles with zero dependencies.
 
 ## v0.7.0: Core API Stabilization
-- ⬜ **Stable Initialization API**: **svglet.init()** with clearly documented options.
-- ⬜ **Manual Controls**: Public methods such as **scan()**, **load()**, and **preload()** for advanced use cases.
+- ⬜ **Stable Initialization API**: `svglet.init()` with clearly documented options.
+- ⬜ **Manual Controls**: Public methods such as `scan()`, `load()`, and `preload()` for advanced use cases.
 - ⬜ **Predictable Behavior**: Well-defined defaults that work out of the box without configuration.
 
 ## v0.8.0: Performance & Caching Improvements
@@ -57,7 +58,7 @@ We are actively working on improving **svglet**. Below is our planned roadmap fo
 - ⬜ **Cleaner Project Structure**: Encourage organized icon directories without enforcing complexity.
 
 ## v1.2.0: Extensibility
-- ⬜ **Lifecycle Hooks**: Optional hooks such as **onLoad** and **onError**.
+- ⬜ **Lifecycle Hooks**: Optional hooks such as `onLoad` and `onError`.
 - ⬜ **Advanced Integration Patterns**: Better support for dynamic frameworks while keeping svglet framework-agnostic.
 - ⬜ **Improved Contribution Guidelines**: Easier onboarding for contributors.
 

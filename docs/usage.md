@@ -10,7 +10,7 @@
 <script src="dist/svglet.js"></script>
 ```
 
-By default, `svglet` automagically finds all elements with `data-icon`, fetches the corresponding SVG from `icons/`, and replaces them inline.
+By default, `svglet` automagically finds all elements with `data-icon`, resolves the SVG from `icons/`, and applies it as a mask.
 
 ## Advanced Usage
 

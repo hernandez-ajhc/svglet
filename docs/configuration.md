@@ -4,7 +4,7 @@ Svglet works out of the box, but you can configure it to fit your project struct
 
 ## Default Configuration
 
-By default, `svglet` looks for icons in `../../examples/icons` (legacy default) and runs automatically on load.
+By default, `svglet` automagically finds all elements with `data-icon`, resolves the corresponding SVG from `icons/`, and applies it as a mask.
 
 ```javascript
 {

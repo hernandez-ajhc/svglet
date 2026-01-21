@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>svglet – Premium Animations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+    </style>
+    <script>window.svgletAutoInit = false;</script>
+    <script type="module">
+        import { init } from '../src/index.js';
+        init({
+            iconPath: './icons',
+            debug: true
+        });
+    </script>
+</head>
+
+<body
+    class="bg-slate-950 text-white flex flex-col items-center min-h-screen selection:bg-pink-500 selection:text-white py-20 px-4">
+
+    <!-- Background decorations -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[128px]">
+        </div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[128px]">
+        </div>
+    </div>
+
+    <div class="z-10 w-full max-w-6xl space-y-16">
+
+        <!-- Title -->
+        <div class="text-center space-y-4">
+            <h1
+                class="text-5xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
+                Animation Suite
+            </h1>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                Powerful, fluid animations powered by native CSS keyframes. <br />
+                Zero JavaScript overhead. Infinite loops or interaction-based.
+            </p>
+        </div>
+
+        <!-- Section 1: Standard (Infinite) -->
+        <div class="space-y-6">
+            <div class="flex items-center gap-4 border-b border-white/10 pb-4">
+                <h2 class="text-2xl font-semibold text-white">Infinite Loops</h2>
+                <span class="text-xs font-mono bg-blue-500/20 text-blue-300 px-2 py-1 rounded">Default</span>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+                <!-- Spin Card (Standard) -->
+                <div
+                    class="group relative p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all flex flex-col items-center gap-4">
+                    <div class="p-4 rounded-full bg-white/5 group-hover:bg-white/10 transition-colors">
+                        <i data-icon="youtube" class="svg-spin text-4xl text-[#FF0000]"></i>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-sm text-slate-300 font-medium">Spin</span>
+                        <code class="block mt-1 text-xs text-slate-500">.svg-spin</code>
+                    </div>
+                </div>
+
+                <!-- Bounce Card (Standard) -->
+                <div
+                    class="group relative p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all flex flex-col items-center gap-4">
+                    <div class="p-4 rounded-full bg-white/5 group-hover:bg-white/10 transition-colors">
+                        <i data-icon="twitter" class="svg-bounce text-4xl text-[#1DA1F2]"></i>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-sm text-slate-300 font-medium">Bounce</span>
+                        <code class="block mt-1 text-xs text-slate-500">.svg-bounce</code>
+                    </div>
+                </div>
+
+                <!-- Pulse Card (Standard) -->
+                <div
+                    class="group relative p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all flex flex-col items-center gap-4">
+                    <div class="p-4 rounded-full bg-white/5 group-hover:bg-white/10 transition-colors">
+                        <i data-icon="instagram" class="svg-spin-pulse text-4xl text-[#E1306C]"></i>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-sm text-slate-300 font-medium">Pulse</span>
+                        <code class="block mt-1 text-xs text-slate-500">.svg-spin-pulse</code>
+                    </div>
+                </div>
+
+                <!-- Shake Card (Standard) -->
+                <div
+                    class="group relative p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all flex flex-col items-center gap-4">
+                    <div class="p-4 rounded-full bg-white/5 group-hover:bg-white/10 transition-colors">
+                        <i data-icon="tiktok" class="svg-shake text-4xl text-[#FE2C55]"></i>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-sm text-slate-300 font-medium">Shake</span>
+                        <code class="block mt-1 text-xs text-slate-500">.svg-shake</code>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Section 2: Hover Triggers -->
+        <div class="space-y-6">
+            <div class="flex items-center gap-4 border-b border-white/10 pb-4">
+                <h2 class="text-2xl font-semibold text-white">Interaction (Hover)</h2>
+                <span class="text-xs font-mono bg-purple-500/20 text-purple-300 px-2 py-1 rounded">Interactive</span>
+            </div>
+
+            <p class="text-slate-400">Add <code>.svg-hover-[name]</code> to animate only on hover.</p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+                <!-- Spin Hover -->
+                <div
+                    class="group relative p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-purple-500/50 transition-all flex flex-col items-center gap-4 cursor-pointer">
+                    <div class="p-4 rounded-full bg-white/5 group-hover:bg-purple-500/20 transition-colors">
+                        <i data-icon="settings"
+                            class="svg-hover-spin text-4xl text-slate-200 group-hover:text-purple-400"></i>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-sm text-slate-300 font-medium">Hover to Spin</span>
+                        <code class="block mt-1 text-xs text-slate-500">.svg-hover-spin</code>
+                    </div>
+                </div>
+
+                <!-- Beat Hover -->
+                <div
+                    class="group relative p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-red-500/50 transition-all flex flex-col items-center gap-4 cursor-pointer">
+                    <div class="p-4 rounded-full bg-white/5 group-hover:bg-red-500/20 transition-colors">
+                        <i data-icon="facebook"
+                            class="svg-hover-beat text-4xl text-slate-200 group-hover:text-red-400"></i>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-sm text-slate-300 font-medium">Hover to Beat</span>
+                        <code class="block mt-1 text-xs text-slate-500">.svg-hover-beat</code>
+                    </div>
+                </div>
+
+                <!-- Flip Hover -->
+                <div
+                    class="group relative p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-orange-500/50 transition-all flex flex-col items-center gap-4 cursor-pointer">
+                    <div class="p-4 rounded-full bg-white/5 group-hover:bg-orange-500/20 transition-colors">
+                        <i data-icon="linkedin"
+                            class="svg-hover-flip text-4xl text-slate-200 group-hover:text-orange-400"></i>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-sm text-slate-300 font-medium">Hover to Flip</span>
+                        <code class="block mt-1 text-xs text-slate-500">.svg-hover-flip</code>
+                    </div>
+                </div>
+
+                <!-- Fade Hover -->
+                <div
+                    class="group relative p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-green-500/50 transition-all flex flex-col items-center gap-4 cursor-pointer">
+                    <div class="p-4 rounded-full bg-white/5 group-hover:bg-green-500/20 transition-colors">
+                        <i data-icon="tiktok"
+                            class="svg-hover-fade text-4xl text-slate-200 group-hover:text-green-400"></i>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-sm text-slate-300 font-medium">Hover to Fade</span>
+                        <code class="block mt-1 text-xs text-slate-500">.svg-hover-fade</code>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Section 3: Speed Control -->
+        <div class="space-y-6">
+            <div class="flex items-center gap-4 border-b border-white/10 pb-4">
+                <h2 class="text-2xl font-semibold text-white">Speed Control</h2>
+                <span class="text-xs font-mono bg-pink-500/20 text-pink-300 px-2 py-1 rounded">Modifiers</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Fast (0.5s) -->
+                <div
+                    class="group relative p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all flex flex-col items-center gap-4">
+                    <i data-icon="settings" class="svg-spin svg-fast text-4xl text-pink-500"></i>
+                    <div class="text-center">
+                        <span class="text-sm text-slate-300 font-medium">Fast (0.5s)</span>
+                        <code class="block mt-1 text-xs text-slate-500">.svg-spin .svg-fast</code>
+                    </div>
+                </div>
+
+                <!-- Normal (2s) -->
+                <div
+                    class="group relative p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all flex flex-col items-center gap-4">
+                    <i data-icon="settings" class="svg-spin text-4xl text-pink-500"></i>
+                    <div class="text-center">
+                        <span class="text-sm text-slate-300 font-medium">Normal (2s)</span>
+                        <code class="block mt-1 text-xs text-slate-500">.svg-spin</code>
+                    </div>
+                </div>
+
+                <!-- Slow (3s) -->
+                <div
+                    class="group relative p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all flex flex-col items-center gap-4">
+                    <i data-icon="settings" class="svg-spin svg-super-slow text-4xl text-pink-500"></i>
+                    <div class="text-center">
+                        <span class="text-sm text-slate-300 font-medium">Super Slow (3s)</span>
+                        <code class="block mt-1 text-xs text-slate-500">.svg-spin .svg-super-slow</code>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

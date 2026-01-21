@@ -1,8 +1,10 @@
 import { replaceIcons } from './core/replacer.js';
 import { updateConfig } from './config/defaults.js';
+import { injectStyles } from './core/styles.js';
 
 export function init(options = {}) {
   updateConfig(options);
+  injectStyles();
   replaceIcons();
 }
 
@@ -17,6 +19,7 @@ if (typeof document !== 'undefined') {
 
     // A simple heuristic: if window.svgletAutoInit is explicitly false, don't run.
     if (window.svgletAutoInit !== false) {
+      injectStyles();
       replaceIcons();
     }
   });
