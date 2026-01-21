@@ -1,51 +1,48 @@
 # Usage Guide
 
-Using svglet is straightforward. Once the script is included, you can place icons anywhere in your HTML.
+## Basic Usage
 
-## Basic Syntax
-
-Use any element (commonly `<i>` or `<span>`) with the `data-icon` attribute. The value should match the filename of your SVG icon (without the extension).
-
-```html
-<!-- Loads icons/user.svg -->
-<i data-icon="user"></i>
-
-<!-- Loads icons/menu.svg -->
-<span data-icon="menu"></span>
-```
-
-## Styling Icons
-
-Since svglet injects inline SVGs, you can control their appearance using CSS.
-
-### Sizing
-
-Icons default to `1em` width and height, meaning they scale with your text size.
-
-```css
-.large-icon {
-  font-size: 2rem; /* Icon becomes 2rem x 2rem */
-}
-```
-
-### Coloring
-
-svglet automatically converts `fill` and `stroke` attributes on common SVG elements to `currentColor`. This means the icon will inherit the text color of its parent or its own color property.
-
-```css
-.icon-red {
-  color: red;
-}
-```
+1.  **Add `data-icon` attributes** to your HTML elements.
+2.  **Include `svglet`** at the bottom of your body.
 
 ```html
-<i data-icon="heart" class="icon-red"></i>
+<i data-icon="menu"></i>
+<script src="dist/svglet.js"></script>
 ```
 
-## Tailwind CSS Example
+By default, `svglet` automagically finds all elements with `data-icon`, fetches the corresponding SVG from `icons/`, and replaces them inline.
 
-If you are using Tailwind CSS, utility classes work perfectly.
+## Advanced Usage
+
+### Manual Initialization (v0.2.0+)
+
+If you want more control, or need to configure paths, you can initialize `svglet` manually.
 
 ```html
-<i data-icon="twitter" class="text-blue-500 text-3xl hover:text-blue-600 transition"></i>
+<!-- prevent auto-init -->
+<script>window.svgletAutoInit = false;</script>
+
+<!-- Load module -->
+<script type="module">
+  import { init } from './dist/svglet.js';
+
+  init({
+    iconPath: '/assets/ui/icons',
+    classPrefix: 'ui-icon-'
+  });
+</script>
 ```
+
+### Gradients
+
+You can also apply gradients directly via data attributes:
+
+```html
+<i data-icon="star" 
+   class="svg-gradient" 
+   data-gradient-from="#FFD700" 
+   data-gradient-to="#FF4500">
+</i>
+```
+
+See [Gradients](gradients.md) for more details.

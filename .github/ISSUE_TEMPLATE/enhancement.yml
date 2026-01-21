@@ -1,0 +1,57 @@
+name: ✨ Enhancement / DX
+description: Improve developer experience or internal behavior
+title: "[vX.X.X] Enhancement: short description"
+labels:
+  - enhancement
+  - dx
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **Version is mandatory**
+        Please replace `vX.X.X` in the title with the target version.
+
+  - type: input
+    id: version
+    attributes:
+      label: Target Version
+      placeholder: "v0.4.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What should be improved and why?
+    validations:
+      required: true
+
+  - type: textarea
+    id: benefit
+    attributes:
+      label: Benefit
+      description: How does this improve svglet?
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: Define what is included and excluded.
+    validations:
+      required: true
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints
+      value: |
+        - Keep behavior predictable
+        - Avoid unnecessary complexity
+        - Maintain backward compatibility
+    validations:
+      required: true

@@ -1,0 +1,65 @@
+name: 🚀 Feature Request
+description: Propose a new feature or improvement for svglet
+title: "[vX.X.X] Short and clear feature description"
+labels:
+  - feature
+  - planned
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **Version is mandatory**
+        Please replace `vX.X.X` in the title with the target version.
+
+  - type: input
+    id: version
+    attributes:
+      label: Target Version
+      description: Which version does this feature belong to?
+      placeholder: "v0.8.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Clearly explain what this feature is and why it is needed.
+    validations:
+      required: true
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What does success look like once this feature is implemented?
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What is included and what is explicitly NOT included?
+    validations:
+      required: true
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints
+      value: |
+        - Vanilla JavaScript only
+        - No mandatory build step
+        - Keep API simple
+        - No breaking changes unless discussed
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Additional context or ideas.

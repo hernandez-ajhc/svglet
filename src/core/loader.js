@@ -1,12 +1,21 @@
-import { DEFAULTS } from '../config/defaults.js';
+import { config } from '../config/defaults.js';
 import { applyGradient } from './gradient.js';
+import { getIconFromCache, saveIconToCache } from './cache.js';
 
 export async function loadIcon(name, options = {}) {
   try {
-    const res = await fetch(`${DEFAULTS.iconPath}/${name}.svg`);
-    if (!res.ok) throw new Error(`Icon not found: ${name}`);
+    const cached = getIconFromCache(name);
+    let svgText;
 
-    const svgText = await res.text();
+    if (cached) {
+      svgText = cached;
+    } else {
+      const res = await fetch(`${config.iconPath}/${name}.svg`);
+      if (!res.ok) throw new Error(`Icon not found: ${name}`);
+
+      svgText = await res.text();
+      saveIconToCache(name, svgText);
+    }
 
     const container = document.createElement('div');
     container.innerHTML = svgText.trim();
@@ -15,8 +24,8 @@ export async function loadIcon(name, options = {}) {
     Object.assign(svg.style, {
       display: 'inline-block',
       verticalAlign: 'middle',
-      width: DEFAULTS.size,
-      height: DEFAULTS.size,
+      width: config.size,
+      height: config.size,
     });
 
     svg.querySelectorAll('*').forEach(el => {
